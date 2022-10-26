@@ -51,7 +51,7 @@ let pista;
 
 
 
-//Esto es un harcodeo
+
 
 for(let i = 0; i < 4; i++){
     disco = {
