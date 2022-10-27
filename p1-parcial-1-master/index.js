@@ -51,7 +51,7 @@ let pista;
 
 
 
-
+//Esto es un harcodeo
 
 for(let i = 0; i < 4; i++){
     disco = {
@@ -64,8 +64,8 @@ for(let i = 0; i < 4; i++){
 }
 
 function agregar() {
-    nombreDisco = prompt("Ingrese el nombre del disco");
-    nombreAutor = prompt("Ingrese el nombre del autor");
+    nombreDisco = validarTextoVacio(" del disco");
+    nombreAutor = validarTextoVacio(" del autor");
     // numeroCodigo = validarCodigo (Number(prompt("Ingrese el número de código")), discos);
     numeroCodigo = validarCodigo(discos);
 
@@ -76,8 +76,8 @@ function agregar() {
         Pistas: []
     }
     do {
-        nombrePista = prompt("Ingrese el nombre de la pista");
-        duracionPista = Number(prompt("Ingrese la duración de la pista"));
+        nombrePista = validarTextoVacio(" de la pista");
+        duracionPista = validarDuracion();
         pista = {
             Nombre: nombrePista,
             Duracion: duracionPista,
@@ -98,13 +98,42 @@ function validarCodigo(discoVerificar){
 
     let numeroIgresado = Number(prompt("Ingrese el número de código:"))
     for (let i = 0; i < discoVerificar.length; i++){
-        while(numeroIgresado == discoVerificar[i].Codigo && ){
+        while((numeroIgresado == discoVerificar[i].Codigo) || (numeroIgresado < 1 || numeroIgresado > 999)){
             alert("codigo ya existente")
             numeroIgresado = Number(prompt("Ingrese el número de código "));
         }
     }
     return numeroIgresado;
 }
+
+
+//La duración de cada pista debe estar entre 0 y 7200 (segundos) inclusive.
+function validarDuracion(duracionVerificar){
+
+    let numeroIgresado = Number(prompt("Ingrese la duración de la pista:"))
+    
+        while (numeroIgresado < 0 || numeroIgresado > 7200){
+            alert("Duración maxima 7200 (segundos) y duración minima 0 (segundos)")
+            numeroIgresado = Number(prompt("Ingrese la duración de la pista"));
+        }
+    
+    return numeroIgresado;
+}
+
+// El nombre del disco, autor/banda y nombre de la pista no pueden quedar vacíos.
+//Pedir el dato, crear una condicional y saber el tamaño del texto.
+function validarTextoVacio(tipo){
+    
+    let textoIngresado = prompt("Ingrese el nombre" + `${tipo}`)
+    console.log(textoIngresado.length)
+    while (textoIngresado.length < 1) {
+        alert("Por favor completa los datos")
+        textoIngresado = prompt("Ingrese de nuevo el nombre" + `${tipo}`);
+    }
+    
+    return textoIngresado;
+}
+
 
 
 
