@@ -57,7 +57,7 @@ h3{
     font-family: 'Roboto', sans-serif;
     font-size: 2em;
     line-height: 1.5;
-    font-weight: 700;
+    font-weight: 300;
     text-align: center;
 }
 
@@ -95,7 +95,6 @@ strong {
 
 .flex-container {
     background: linear-gradient(157deg, rgba(30,215,96,1) 0%, rgba(64,62,62,1) 30%, rgba(0,0,0,1) 100%);
-    -webkit-backdrop-filter: blur( 2px );
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -153,7 +152,6 @@ main p em {
 
 main ul {
     background: rgb(0 200 122);
-    -webkit-backdrop-filter: blur( 2px );
     border-radius: 10px;
     display: flex;
     flex-direction: column;
