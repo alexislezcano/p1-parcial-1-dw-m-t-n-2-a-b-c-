@@ -15,6 +15,7 @@
 /** General */
 html {
     box-sizing: border-box;
+    height: 100%;
 }
 
 *, *:before, *:after {
@@ -30,14 +31,17 @@ html {
     font-weight: 400;
 }
 
+
 /** Body */
 body {
-    background-color: #134F5C;
-    color: #D0E0E3;
+    background-color: rgb(32 32 32);
 }
 
 /** Header */
 header {
+    font-size: 0.5rem;
+    background: white;
+    color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,28 +51,85 @@ header {
 
 /** Encabezados */
 h1,
-h2 {
-    font-family: 'Montserrat';
-    font-size: 3.6em;
+h2,
+h3{
+    margin: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
     line-height: 1.5;
     font-weight: 700;
     text-align: center;
 }
 
 h2 {
-    font-size: 3em;
-    color: #134F5C;
+    color: rgb(255, 255, 255);
+    text-align: start;
+    font-size: 2.5em;
+    font-family: 'Roboto', sans-serif;
+}
+
+h3 {
+    width: 20%;
+    background: rgba( 255, 255, 255, 0.25 );
+    border-radius: 1rem;
+    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+    backdrop-filter: blur(4.9px);
+    -webkit-backdrop-filter: blur(4.9px);
+    border: 1px solid rgba(255, 255, 255, 0.31);
+
+    padding: 1rem;
+    margin: 0rem 0rem 3rem 0rem;
+    font-size: 1.4em;
+    color: #ffffff;
+}
+
+strong {
+    width: 100%;
+    font-family: 'Syne', sans-serif;
+    margin: auto;
+    font-size: 2rem;
+    padding: 0.7rem;
+    text-align: center;
+    background: #00150d4d;
+}
+
+.flex-container {
+    background: linear-gradient(157deg, rgba(30,215,96,1) 0%, rgba(64,62,62,1) 30%, rgba(0,0,0,1) 100%);
+    -webkit-backdrop-filter: blur( 2px );
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0rem;
+    margin: auto;
+    max-width: 2000px;
+    margin: 28px;
+    flex-direction: row;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.banner {
+    width: 300px;
+    margin: 4rem;
 }
 
 /** Main */
 main {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 4em 2em;
-    background-color: #FFF;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* background: linear-gradient(transparent 0,rgba(0,0,0,.5) 100%),var(--background-noise); */
 }
+
 
 main p {
     font-size: 2.4em;
@@ -91,6 +152,9 @@ main p em {
 }
 
 main ul {
+    background: rgb(0 200 122);
+    -webkit-backdrop-filter: blur( 2px );
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -99,14 +163,15 @@ main ul {
 }
 
 ul{
-    color: black;
+    color: rgb(255, 255, 255);
 }
 main ul li {
-    margin-left: 2em;
-    font-size: 2.4em;
+    display: block;
+    font-size: 2em;
     line-height: 1.5;
-    text-align: left;
-    color: #1A4A5E;
+    margin: auto;
+    color: #ffffff;
+    padding: 0rem 0rem 2rem 0rem;
 }
 
 main ul li strong,
@@ -123,16 +188,17 @@ main ul li em {
 }
 
 main button {
+    font-family: 'Roboto', sans-serif;
     margin: .5em 0;
     border: none;
-    border-radius: .5em;
+    border-radius: 1rem;
     padding: .25em .5em;
-    background: #134F5C;
+    background: linear-gradient(180deg, rgb(31 223 100) 0%, rgb(0 91 33 / 60%) 100%, rgba(0,0,0,1) 100%);
     cursor: pointer;
-    font-size: 2.4em;
-    line-height: 1.5;
+    font-size: 1.4em;
+    line-height: 2.5;
     text-align: center;
-    color: #D0E0E3;
+    color: #ffffff;
 }
 
 main div.galeria {
@@ -144,7 +210,6 @@ main div.galeria {
     margin: 1em 0;
     width: 100%;
     padding: 1em;
-    background: rgba(19,79,92,.5);
 }
 
 main div.galeria > img {
@@ -193,13 +258,14 @@ main hr {
 
 /** Footer */
 footer {
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     padding: 2em;
-    
+    margin: 3rem 0rem 0rem 0rem;
 }
 
 footer ul {
@@ -231,7 +297,8 @@ footer ul li a:hover {
 
 /** Overs */
 main button:hover {
-    opacity: .8;
+    background: #faf9f9;
+    color: rgb(0, 0, 0);
 }
 
 /**
